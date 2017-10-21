@@ -11,6 +11,11 @@ import com.snyder.ui.repo.MenuItemsPage;
 
 import io.appium.java_client.AppiumDriver;
 
+/**
+ * 
+ * @author Harikumar
+ *
+ */
 public class TestLoginUS109 {
 	
 	AppiumDriver driver;
