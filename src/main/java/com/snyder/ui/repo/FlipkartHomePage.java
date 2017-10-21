@@ -45,8 +45,9 @@ public class FlipkartHomePage {
 		return null;
 	}
 	
-	public WebElement getmenuIcon()
+	public WebElement getmenuIcon() throws InterruptedException
 	{
+		
 		String driverType=driver.getClass().getName();
 		if(driverType.contains("AndroidDriver"))
 		{

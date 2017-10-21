@@ -8,6 +8,7 @@ public interface AosLoginPage {
 	By password=By.id("com.flipkart.android:id/et_password");
 	By signIn=By.id("com.flipkart.android:id/btn_mlogin");
 	By cancel=By.id("com.google.android.gms:id/cancel");
-	By close=By.id("com.flipkart.android:id/btn_skip");
+	
+	
 
 }

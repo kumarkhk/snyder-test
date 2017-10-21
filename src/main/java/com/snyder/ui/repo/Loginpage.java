@@ -77,7 +77,7 @@ public class Loginpage {
 		
 	}
 	
-	public  WebElement getCloseButton()
+	/*public  WebElement getCloseButton()
 	{
 		String driverType=driver.getClass().getName();
 		
@@ -91,5 +91,5 @@ public class Loginpage {
 		}
 		return null;
 		
-	}
+	}*/
 }
