@@ -55,6 +55,7 @@ public class TestLoginUS109 {
 	@AfterMethod
 	public void tearDown()
 	{
+		//driver.getOrientation();
 		driver.quit();
 	}
 
