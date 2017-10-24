@@ -5,38 +5,22 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.snyder.ui.object.AosMenuItems;
 import com.snyder.ui.object.AosTitleScreen;
-import com.snyder.ui.object.IosMenuItems;
 
-public class MenuItemsPage {
+public class ScreenTitlePage {
 	
 	RemoteWebDriver driver;
 	
-	public MenuItemsPage(RemoteWebDriver driver)
+	public ScreenTitlePage(RemoteWebDriver driver)
 	{
 		this.driver=driver;
 	}
 	
-	public WebElement getMyAccount()
+	public WebElement getElectronicsTitle()
 	{
 		String driverType=driver.getClass().getName();
 		if(driverType.contains("AndroidDriver"))
 		{
-			return driver.findElement(AosMenuItems.myAccount);
-		}
-		else if(driverType.contains("IOSDriver"))
-		{
-			return driver.findElement(IosMenuItems.myAccount);
-		}
-		
-		return null;
-	}
-	
-	public WebElement getElectronicsTab()
-	{
-		String driverType=driver.getClass().getName();
-		if(driverType.contains("AndroidDriver"))
-		{
-			return driver.findElement(AosMenuItems.electonics);
+			return driver.findElement(AosTitleScreen.electronicsTitle);
 		}
 		else if(driverType.contains("IOSDriver"))
 		{
@@ -44,12 +28,13 @@ public class MenuItemsPage {
 		}
 		return null;
 	}
-	public WebElement getTvAppliancesTab()
+	
+	public WebElement getTvAppliancesTitle()
 	{
 		String driverType=driver.getClass().getName();
 		if(driverType.contains("AndroidDriver"))
 		{
-			return driver.findElement(AosMenuItems.tv_appliances);
+			return driver.findElement(AosTitleScreen.tv_appliances);
 		}
 		else if(driverType.contains("IOSDriver"))
 		{

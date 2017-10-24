@@ -1,5 +1,6 @@
 package com.snyder.test.smoke;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import com.snyder.test.config.CreateDriver;
 import com.snyder.ui.repo.FlipkartHomePage;
 import com.snyder.ui.repo.Loginpage;
 import com.snyder.ui.repo.MenuItemsPage;
+import com.snyder.ui.repo.ScreenTitlePage;
 
 import io.appium.java_client.AppiumDriver;
 
@@ -22,18 +24,21 @@ public class TestLoginUS109 {
 	FlipkartHomePage home_page;
 	MenuItemsPage menu_items;
 	Loginpage login_page;
+	ScreenTitlePage screen_title;
 	
 	@BeforeMethod
-	public void setUp()
+	public void setUp() throws Exception
 	{
 		driver=CreateDriver.getDriverInstance();
 		home_page=new FlipkartHomePage(driver);
 		menu_items=new MenuItemsPage(driver);
 		login_page=new Loginpage(driver);
+		screen_title=new ScreenTitlePage(driver);
+		home_page.getmenuIcon().click();
 		
 	}
 	
-	@Test
+	/*@Test
 	public void testLoginSuccess() throws Exception
 	{
 		// click on menu icon
@@ -50,6 +55,30 @@ public class TestLoginUS109 {
 		login_page.getPassWordText().sendKeys("abcd");
 		//click on sign inn button
 		login_page.getSignInButton().click();
+	}*/
+	
+	/*@Test
+	public void testElectronicsTitle() throws Exception
+	{
+		// click on menu icon
+		//home_page.getmenuIcon().click();
+		//click on my account
+		menu_items.getElectronicsTab().click();;
+		String actualTitle=screen_title.getElectronicsTitle().getText();
+		Assert.assertEquals(actualTitle, "Electronics");
+		
+	}*/
+	
+	@Test
+	public void testTvAppliancesTitle() throws Exception
+	{
+		// click on menu icon
+		//home_page.getmenuIcon().click();
+		//click on my account
+		menu_items.getTvAppliancesTab().click();;
+		String actualTitle=screen_title.getTvAppliancesTitle().getText();
+		Assert.assertEquals(actualTitle, "TVs & Appliances");
+		
 	}
 	
 	@AfterMethod
@@ -57,8 +86,8 @@ public class TestLoginUS109 {
 	{
 
 		//driver.getOrientation();
-		//driver.close();
-		driver.quit();
+		//driver.closeApp();
+		//driver.quit();
 	}
 
 }
