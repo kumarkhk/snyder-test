@@ -114,9 +114,11 @@ public class TestLoginUS109 {
 	public void tearDown()
 	{
 
-		
+
+		// it will close the opened application
 		driver.closeApp();
-		//driver.quit();
+		
+
 	}
 
 }
