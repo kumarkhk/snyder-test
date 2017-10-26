@@ -59,5 +59,20 @@ public class FlipkartHomePage {
 		}
 		return null;
 	}
+	
+	public WebElement getSkipIcon() throws InterruptedException
+	{
+		
+		String driverType=driver.getClass().getName();
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosFlipkartHome.skip);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			return driver.findElement(IosFlipkartHome.menuIcon);
+		}
+		return null;
+	}
 
 }

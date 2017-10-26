@@ -42,5 +42,32 @@ public class ScreenTitlePage {
 		}
 		return null;
 	}
+	
+	public WebElement getFashionTitle()
+	{
+		String driverType=driver.getClass().getName();
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosTitleScreen.fashoinTitle);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		return null;
+	}
 
+	public WebElement getHomeFurnitureTitle()
+	{
+		String driverType=driver.getClass().getName();
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosTitleScreen.home_furnitureTitle);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		return null;
+	}
 }

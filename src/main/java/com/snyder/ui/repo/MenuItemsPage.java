@@ -57,5 +57,32 @@ public class MenuItemsPage {
 		}
 		return null;
 	}
+	
+	public WebElement getFashoinTab()
+	{
+		String driverType=driver.getClass().getName();
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosMenuItems.fashion);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		return null;
+	}
 
+	public WebElement getHomeFurnitureTab()
+	{
+		String driverType=driver.getClass().getName();
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosMenuItems.home_furniture);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		return null;
+	}
 }

@@ -5,8 +5,10 @@
     <classes>
       <class name="com.snyder.test.smoke.TestLoginUS109">
         <methods>
-          <include name="testLoginSuccess"/>
+          <include name="testFashoinTitle"/>
           <include name="setUp"/>
+          <include name="testHomeFurnitureTitle"/>
+          <include name="initializePageObjectClass"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.snyder.test.smoke.TestLoginUS109 -->

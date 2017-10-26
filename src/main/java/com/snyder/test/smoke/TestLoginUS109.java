@@ -2,6 +2,7 @@ package com.snyder.test.smoke;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,19 +27,70 @@ public class TestLoginUS109 {
 	Loginpage login_page;
 	ScreenTitlePage screen_title;
 	
-	@BeforeMethod
-	public void setUp() throws Exception
+	@BeforeClass
+	public void initializePageObjectClass() throws Exception
 	{
 		driver=CreateDriver.getDriverInstance();
 		home_page=new FlipkartHomePage(driver);
 		menu_items=new MenuItemsPage(driver);
 		login_page=new Loginpage(driver);
 		screen_title=new ScreenTitlePage(driver);
-		home_page.getmenuIcon().click();
+		home_page.getSkipIcon().click();
 		
 	}
 	
-	/*@Test
+	@BeforeMethod
+	public void setUp() throws Exception
+	{
+		
+		
+	}
+	
+	
+	@Test(priority=01)
+	public void testElectronicsTitle() throws Exception
+	{
+		// click on menu icon
+		home_page.getmenuIcon().click();
+		//click on my account
+		menu_items.getElectronicsTab().click();;
+		String actualTitle=screen_title.getElectronicsTitle().getText();
+		Assert.assertEquals(actualTitle, "Electronics");
+		
+	}
+	
+	@Test(priority=02)
+	public void testTvAppliancesTitle() throws Exception
+	{
+		// click on menu icon
+		home_page.getmenuIcon().click();
+		//click on my account
+		menu_items.getTvAppliancesTab().click();;
+		String actualTitle=screen_title.getTvAppliancesTitle().getText();
+		Assert.assertEquals(actualTitle, "TVs & Appliances");
+		
+	}
+	
+		
+	@Test(priority=04)
+	public void testFashoinTitle() throws Exception
+	{
+		home_page.getmenuIcon().click();
+		menu_items.getFashoinTab().click();;
+		String actualTitle=screen_title.getFashionTitle().getText();
+		Assert.assertEquals(actualTitle, "Fashion");
+	}
+	
+	@Test(priority=05)
+	public void testHomeFurnitureTitle() throws Exception
+	{
+		home_page.getmenuIcon().click();
+		menu_items.getHomeFurnitureTab().click();
+		String actualTitle=screen_title.getHomeFurnitureTitle().getText();
+		Assert.assertEquals(actualTitle, "Home and Furniture");
+	}
+	
+	/*@Test(priority=03)
 	public void testLoginSuccess() throws Exception
 	{
 		// click on menu icon
@@ -57,29 +109,6 @@ public class TestLoginUS109 {
 		login_page.getSignInButton().click();
 	}*/
 	
-	/*@Test
-	public void testElectronicsTitle() throws Exception
-	{
-		// click on menu icon
-		//home_page.getmenuIcon().click();
-		//click on my account
-		menu_items.getElectronicsTab().click();;
-		String actualTitle=screen_title.getElectronicsTitle().getText();
-		Assert.assertEquals(actualTitle, "Electronics");
-		
-	}*/
-	
-	@Test
-	public void testTvAppliancesTitle() throws Exception
-	{
-		// click on menu icon
-		//home_page.getmenuIcon().click();
-		//click on my account
-		menu_items.getTvAppliancesTab().click();;
-		String actualTitle=screen_title.getTvAppliancesTitle().getText();
-		Assert.assertEquals(actualTitle, "TVs & Appliances");
-		
-	}
 	
 	@AfterMethod
 	public void tearDown()
