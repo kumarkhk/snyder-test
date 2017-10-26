@@ -114,8 +114,8 @@ public class TestLoginUS109 {
 	public void tearDown()
 	{
 
-		//driver.getOrientation();
-		//driver.closeApp();
+		
+		driver.closeApp();
 		//driver.quit();
 	}
 
