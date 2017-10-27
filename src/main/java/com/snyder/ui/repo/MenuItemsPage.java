@@ -85,4 +85,36 @@ public class MenuItemsPage {
 		}
 		return null;
 	}
+	
+	public WebElement getBooksMoreTab()
+	{
+		String driverType=driver.getClass().getName();
+		
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosMenuItems.books_more);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		
+		return null;
+	}
+	
+	public WebElement getOfferZoneTab()
+	{
+		String driverType=driver.getClass().getName();
+		
+		if(driverType.contains("AndroidDriver"))
+		{
+			return driver.findElement(AosMenuItems.offerzone);
+		}
+		else if(driverType.contains("IOSDriver"))
+		{
+			//return driver.findElement(IosMenuItems.myAccount);
+		}
+		
+		return null;
+	}
 }
