@@ -6,6 +6,8 @@
       <class name="com.snyder.test.smoke.TestLoginUS109">
         <methods>
           <include name="testFashoinTitle"/>
+          <include name="testElectronicsTitle"/>
+          <include name="testTvAppliancesTitle"/>
           <include name="setUp"/>
           <include name="testHomeFurnitureTitle"/>
           <include name="initializePageObjectClass"/>

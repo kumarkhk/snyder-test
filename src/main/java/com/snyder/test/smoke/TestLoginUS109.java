@@ -1,6 +1,7 @@
 package com.snyder.test.smoke;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -116,9 +117,17 @@ public class TestLoginUS109 {
 
 
 		// it will close the opened application
-		driver.closeApp();
+		//driver.closeApp();
+		
 		
 
+	}
+	
+	@AfterClass
+	public void closeApplication()
+	{
+		driver.closeApp();
+		
 	}
 
 }
