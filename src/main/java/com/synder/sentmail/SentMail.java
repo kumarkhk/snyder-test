@@ -6,6 +6,7 @@ public class SentMail {
 		
 		System.out.println("Send mail method");
 		System.out.println("new ");
+		System.out.println("sdf");
 	}
 
 }
