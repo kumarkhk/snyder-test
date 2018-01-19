@@ -127,7 +127,11 @@ public class TestLoginUS109 {
 	public void closeApplication()
 	{
 		driver.closeApp();
+
 		driver.close();
+
+		driver.quit();
+
 		
 	}
 
